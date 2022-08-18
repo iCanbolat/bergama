@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Grid, Typography, Container, Box, Fade, Button } from "@mui/material";
 import { styled } from "@mui/system";
 import { useNavigate } from "react-router-dom";
+import 'aos/dist/aos.css'; 
+import Aos from "aos";
 
 const StyledButton = styled(Button)(({ theme }) => ({
   textAlign: "center",
@@ -33,11 +35,16 @@ const items = [
   }
 ]
 
-
-
 const Services = () => {
   const [show, setShow] = React.useState(false);
   const [image , setImage] = React.useState('')
+
+  useEffect(() => {
+    Aos.init({
+      duration: 2000
+    })
+  }, [])
+  
 
   const history = useNavigate();
 
@@ -114,7 +121,7 @@ const Services = () => {
             )}
             <Container sx={{ mt: 5, position: "absolute", top: 0 }}>
               <Grid container flexDirection="column">
-                <Grid item md={5} sx={{ mt: 5 }}>
+                <Grid data-aos='fade-right' item md={5} sx={{ mt: 5 }}>
                   <Typography
                     variant="h4"
                     color="white"
@@ -130,7 +137,7 @@ const Services = () => {
                   </Typography>
                 </Grid>
 
-                <Grid item md={12}>
+                <Grid data-aos='fade-left' item md={12}>
                   <Typography
                     variant="h4"
                     color="white"
@@ -146,7 +153,7 @@ const Services = () => {
                     PETROKİMYA
                   </Typography>
                 </Grid>
-                <Grid item md={6}>
+                <Grid item md={6} data-aos='fade-right'>
                   <Typography
                     variant="h4"
                     color="white"
@@ -161,7 +168,7 @@ const Services = () => {
                     ENERJİ SANTRALİ
                   </Typography>
                 </Grid>
-                <Grid item md={12}>
+                <Grid item md={12} data-aos='fade-left'>
                   <Typography
                     variant="h4"
                     color="white"

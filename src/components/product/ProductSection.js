@@ -41,6 +41,7 @@ const ProductSection = () => {
             Ürünlerimiz
           </Typography>
           <hr></hr>
+
           <Grid container spacing={2}>
             {/* Çelik Yapılar */}
             <Grid item md={3} xs={12}>
@@ -184,6 +185,52 @@ const ProductSection = () => {
                 </CardContent>
                 <CardActions sx={{ justifyContent: "center" }}>
                   <ColorButton onClick={() => history('/kap')} variant="contained" size="small">
+                    İncele
+                  </ColorButton>
+                </CardActions>
+              </Card>
+            </Grid>
+          </Grid>
+
+
+          <Grid container sx={{my:4}} justifyContent='center' flexDirection='row' >
+          <Grid item md={3.3} xs={12}>
+              <Card sx={{ minWidth: "100%", height: "100%" }}>
+                <CardMedia
+                  component="img"
+                  height="180"
+                  image="https://img.archiexpo.com/images_ae/photo-g/53514-9587403.jpg"
+                  alt="çelik-yapı"
+                />
+                <CardContent sx={{ minHeight: "190px" }}>
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      textAlign: "center",
+                      letterSpacing: "2px",
+                      fontWeight: "bolder",
+                    }}
+                    gutterBottom
+                  >
+                    Kablo Kanalları
+
+                  </Typography>
+                  <Typography variant="body2" textAlign="center">
+                  Bergama Endüstri, ön galvaniz, sıcak daldırma galvaniz ve
+                  paslanmaz çelik gibi farklı yüzeylere sahip metal tip kablo
+                  kanalları ve ilgili destek sistemleri üretmektedir. Ürünlerimiz
+                  IEC 61537 ve NEMA standartlarına göre üretilmekte ve
+                  sertifikalandırılmaktadır.
+                  </Typography>
+                </CardContent>
+                <CardActions
+                  sx={{
+                    justifyContent: "center",
+                    alignItems: "end",
+                    alignContent: "space-between",
+                  }}
+                >
+                  <ColorButton onClick={() => history('/celik')} variant="contained" size="small">
                     İncele
                   </ColorButton>
                 </CardActions>

@@ -6,7 +6,7 @@ import QualitySection from "../components/quality/QualitySection";
 import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
 import { styled } from "@mui/material/styles";
-import Kalite from "../images/kalite.jpg"
+import Kalite from "../images/kalite.png"
 
 const StyledTyp = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.up("xs")]:{

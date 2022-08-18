@@ -38,7 +38,7 @@ const About = () => {
           style={{
             height: "70vh",
             width: "100%",
-            backgroundImage: "url(" + Image + ")",
+            backgroundImage: "url(http://bergamaindustry.com/wp-content/uploads/2021/05/6-scaled-e1622030246671-1000x400.jpg)",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",

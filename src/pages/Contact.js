@@ -57,12 +57,10 @@ const Contact = () => {
               flexDirection: "column",
               position:'absolute',
               width:'100%',
-              marginTop:'-7px'
-
             }}
           >
             <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12025.172156983046!2d28.98444199573974!3d41.1062907812753!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf4fdb750a4f31745!2sBta!5e0!3m2!1str!2str!4v1658735122146!5m2!1str!2str"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3629.7742141416816!2d27.04801436435942!3d39.08072817640663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b963e6eb4445c3%3A0xc6790bae461ae12b!2sBergama%20End%C3%BCstri%20%C3%9Cr%C3%BCnleri%20Sanayi%20ve%20Ticaret%20A.%C5%9E.%20Bergama%20%C5%9Eubesi!5e0!3m2!1str!2str!4v1660720963907!5m2!1str!2str"
                   width="100%"
                   height="100%"
                   sx={{ border: "none", position:'absolute' }}
@@ -90,8 +88,9 @@ const Contact = () => {
                       <Grid item md={6} sm={12}>
                         <Typography sx={{my:3 , color:'black', fontWeight:'bolder'}} variant="h5">İletişim Kanalları</Typography>
                         <Typography  sx={{my:3 , color:'black', fontWeight:'bolder'}} gutterBottom variant="body1">
-                          <LocationOnIcon fontSize="10px" /> Ayazağa, Vadistanbul, Azerbaycan Cd. 3B
-                          D:1B Blok, 34485 Sarıyer/İstanbul
+                          <LocationOnIcon fontSize="10px" /> Bergama OSB Mahallesi,
+                                                    3.Cadde, No:1, 35700
+                                                    Bergama, İzmir
                         </Typography>
                         <Typography sx={{my:3 , color:'black', fontWeight:'bolder'}} gutterBottom variant="body1"><EmailIcon fontSize="10px"/> info@bergamaindustry.com</Typography>
                         <Typography sx={{my:3 , color:'black', fontWeight:'bolder'}} gutterBottom variant="body1"><LocalPhoneIcon fontSize="10px"/> +90 (212) 232 3030</Typography>

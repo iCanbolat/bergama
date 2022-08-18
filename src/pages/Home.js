@@ -7,9 +7,10 @@ import {
   Container,
   Tab,
   Tabs,
+  Fade,
 } from "@mui/material";
 import { Box, textAlign } from "@mui/system";
-import React from "react";
+import React, { useEffect } from "react";
 import { styled } from "@mui/material/styles";
 import Services from "../components/Services";
 import Products from "../components/Products";
@@ -17,7 +18,9 @@ import Quality from "../components/Quality";
 import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
 import Foto from "../images/fotoo.jpg"
-import A from "../images/a.jpg"
+import Loader from "../components/loader/Loader"
+import 'aos/dist/aos.css'; 
+import Aos from "aos";
 
 const ResponsiveAbout = styled(Container)(({ theme }) => ({
   [theme.breakpoints.up("md")]: {
@@ -51,10 +54,23 @@ const ColorButton = styled(Button)({
 });
 
 const Home = () => {
+  const [load, setLoad] = React.useState(true)
   const history = useNavigate();
+
+  useEffect(() => {
+    setLoad(false)
+    Aos.init({
+      duration:2000
+    })
+  }, [])
 
   return (
     <>
+    {load ? (
+      <Loader/>
+    ): (
+      <>
+      <Fade in={!load} timeout={{enter: 1000}}>
       <Grid container>
         <Box sx={{backgroundColor:'#00000069',position:'absolute', width:'100%',height:'100%'}}></Box>
         <Grid
@@ -85,30 +101,22 @@ const Home = () => {
               position:'relative'
             }}
           >
-            <Typography
-              variant="body2"
-              sx={{ color: "white" }}
-              gutterBottom
-              component="div"
-            >
-              BERGAMA INDUSTRY
-            </Typography>
             <StyledTyp
               variant="h3"
               sx={{ color: "white" }}
               gutterBottom
               component="div"
             >
-              BERGAMA ENDÜSTRİ
+              BERGAMA INDUSTRY
             </StyledTyp>
           </Box>
         </Grid>
       </Grid>
-
+      </Fade>
       {/* About */}
       <ResponsiveAbout sx={{ minHeight: "37em", paddingTop:'7em'  }}>
         <Grid container  >
-          <Grid item md={6} sm={12} sx={{ position: "relative", textAlign:{ xs: 'center', md:'unset' } }}>
+          <Grid data-aos='fade-right' item md={6} sm={12} sx={{ position: "relative", textAlign:{ xs: 'center', md:'unset' } }}>
             <Grid container>
               <Grid item sm={12}>
                 <Box
@@ -139,7 +147,7 @@ const Home = () => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item md={6} sm={12} alignItems='center' flexDirection="column">
+          <Grid data-aos='fade-left' item md={6} sm={12} alignItems='center' flexDirection="column">
             <StyledTyp
               variant="h4"
               sx={{ color: "black", fontWeight: "bolder", mb: 3 }}
@@ -149,8 +157,8 @@ const Home = () => {
               BERGAMA ENDÜSTRİ
             </StyledTyp>
             <Typography
-              variant="body2"
-              sx={{ color: "black", lineHeight: "25px" }}
+              variant="body1"
+              sx={{ color: "black", lineHeight: "2.2rem", mt:5 }}
               gutterBottom
               component="div"
             >
@@ -195,6 +203,9 @@ const Home = () => {
 
       {/* Kalite */}
       <Quality />
+      </>
+    )}
+      
     </>
   );
 };
